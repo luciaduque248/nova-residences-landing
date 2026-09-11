@@ -1,13 +1,7 @@
 import { FinancingEstimator } from "@/components/financing-estimator";
 import { LeadForm } from "@/components/lead-form";
+import { NovaHero } from "@/components/nova-hero";
 import { TypologyExplorer } from "@/components/typology-explorer";
-
-const facts = [
-  ["Tipologías", "1–3 habitaciones"],
-  ["Áreas", "54–112 m²"],
-  ["Entrega", "Concepto 2028"],
-  ["Ciudad", "Cali · escenario conceptual"],
-];
 
 const amenities = [
   ["01", "Rooftop lounge", "Una terraza alta para reuniones pequeñas, lectura y atardeceres sobre la ciudad."],
@@ -65,71 +59,7 @@ const faqs = [
 export default function Home() {
   return (
     <main className="overflow-clip">
-      <header className="sticky top-0 z-50 border-b border-black/8 bg-[color:var(--surface)]/92 backdrop-blur-xl">
-        <div className="mx-auto flex h-[4.75rem] max-w-[1560px] items-center justify-between px-5 md:px-9 lg:px-12">
-          <a href="#inicio" className="group flex items-center gap-3" aria-label="NOVA Residences, inicio">
-            <span className="grid h-8 w-8 place-items-center rounded-full border border-black/16 text-[10px] font-semibold tracking-[.1em] transition-transform duration-300 group-hover:rotate-12">N</span>
-            <span className="text-sm font-semibold tracking-[0.22em]">NOVA</span>
-            <span className="hidden text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] sm:inline">Residences</span>
-          </a>
-
-          <nav className="hidden items-center gap-8 text-sm lg:flex" aria-label="Navegación principal">
-            <a className="nav-link" href="#residencias">Residencias</a>
-            <a className="nav-link" href="#amenidades">Amenidades</a>
-            <a className="nav-link" href="#ubicacion">Ubicación</a>
-            <a className="nav-link" href="#faq">FAQ</a>
-          </nav>
-
-          <a className="button button-dark" href="#visita">Agendar visita</a>
-        </div>
-      </header>
-
-      <section id="inicio" className="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-[1560px] lg:grid-cols-[0.86fr_1.14fr]">
-        <div className="relative flex flex-col justify-between bg-[var(--surface)] px-6 py-9 md:px-10 md:py-12 lg:px-14 lg:py-14">
-          <div className="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 -rotate-90 text-[10px] uppercase tracking-[.34em] text-black/26 xl:block">Residential concept · 2026</div>
-
-          <div className="max-w-[44rem] pt-8 lg:pt-14">
-            <p className="eyebrow reveal-up">Arquitectura para una vida más ligera</p>
-            <h1 className="reveal-up reveal-delay-1 mt-7 text-[clamp(4.6rem,8vw,9.1rem)] font-medium leading-[0.79] tracking-[-0.075em]">
-              Vivir<br />más arriba.
-            </h1>
-            <p className="reveal-up reveal-delay-2 mt-9 max-w-[37rem] text-lg leading-8 text-[var(--muted)] md:text-xl md:leading-9">
-              Un concepto residencial que combina proporción, calma y proximidad en una experiencia urbana diseñada sin exceso.
-            </p>
-
-            <div className="reveal-up reveal-delay-3 mt-10 flex flex-wrap gap-3">
-              <a className="button button-dark" href="#visita">Agendar visita</a>
-              <a className="button button-outline" href="/nova-brochure.html" download>Descargar brochure</a>
-            </div>
-          </div>
-
-          <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-black/10 pt-7 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-            {facts.map(([label, value]) => (
-              <div key={label}>
-                <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">{label}</p>
-                <p className="mt-2 text-sm font-medium">{value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="hero-art relative min-h-[72svh] overflow-hidden bg-[#b7a48e] lg:min-h-full">
-          <div className="absolute inset-0 bg-[url('/nova-hero.svg')] bg-cover bg-center" role="img" aria-label="Ilustración arquitectónica conceptual de NOVA Residences" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,18,16,0)_55%,rgba(20,18,16,.42)_100%)]" />
-
-          <div className="absolute right-5 top-5 rounded-full border border-white/35 bg-black/10 px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-white backdrop-blur-md md:right-8 md:top-8">Concept project</div>
-
-          <div className="absolute bottom-6 left-6 right-6 grid gap-5 text-white md:bottom-8 md:left-8 md:right-8 md:grid-cols-[1fr_auto] md:items-end">
-            <div>
-              <p className="max-w-md text-sm leading-6 text-white/78">Fachadas profundas, sombras controladas y materialidad mineral para una presencia tranquila dentro de la ciudad.</p>
-            </div>
-            <div className="flex items-end gap-3">
-              <span className="text-[3rem] font-medium leading-none tracking-[-.06em]">28</span>
-              <span className="pb-1 text-[10px] uppercase leading-4 tracking-[.16em] text-white/64">niveles<br />conceptuales</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <NovaHero />
 
       <section className="section-shell py-28 md:py-40">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
