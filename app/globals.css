@@ -10,6 +10,7 @@
   --ink: #171512;
   --paper: #f8f3ea;
   --sand: #c9aa83;
+  --nova-residence-image: url("https://images.unsplash.com/photo-1758448511578-ec292173b70c?auto=format&fit=crop&fm=jpg&q=88&w=2400");
 }
 
 * {
@@ -216,6 +217,33 @@ a.button:active {
   border-color: rgba(23, 21, 18, 0.75);
 }
 
+/* Keep the visual story anchored to the same NOVA tower instead of mixing house imagery. */
+#amenidades .group.relative.mt-11 > div:first-child,
+#amenidades + section figure > div:first-child {
+  background-image: var(--nova-residence-image) !important;
+  background-repeat: no-repeat;
+}
+
+#amenidades .group.relative.mt-11 > div:first-child {
+  background-size: 205% auto;
+  background-position: 88% 40%;
+}
+
+#amenidades + section figure:nth-child(1) > div:first-child {
+  background-size: cover;
+  background-position: 70% center;
+}
+
+#amenidades + section figure:nth-child(2) > div:first-child {
+  background-size: 190% auto;
+  background-position: 93% 26%;
+}
+
+#amenidades + section figure:nth-child(3) > div:first-child {
+  background-size: 165% auto;
+  background-position: 18% 68%;
+}
+
 .form-control {
   min-height: 3.25rem;
   width: 100%;
@@ -288,6 +316,11 @@ summary::-webkit-details-marker {
 @media (max-width: 1023px) {
   footer .section-shell {
     padding-bottom: 6.5rem;
+  }
+
+  #amenidades .group.relative.mt-11 > div:first-child {
+    background-size: cover;
+    background-position: 70% center;
   }
 }
 
