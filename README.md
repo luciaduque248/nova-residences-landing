@@ -4,7 +4,8 @@
 
 Portfolio landing-page case study by Sara Duque.
 
-**Live demo:** https://nova-residences-landing.vercel.app
+**Live demo:** https://nova-residences-landing.vercel.app  
+**Deployment:** Vercel production connected to GitHub `main`.
 
 ## Goal
 Generate qualified leads and private-visit bookings from paid campaigns.
