@@ -1,4 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "alias": ["nova-residences-landing.vercel.app"]
+  "alias": ["nova-residences-srd.vercel.app"]
 }
