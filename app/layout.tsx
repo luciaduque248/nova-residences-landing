@@ -7,7 +7,17 @@ export const metadata: Metadata = {
   description:
     "Concepto de landing page inmobiliaria orientada a captación de leads, UX responsive, interacción, SEO y performance.",
   applicationName: "NOVA Residences",
-  keywords: ["landing page", "real estate", "UX/UI", "frontend", "lead generation", "portfolio"],
+  authors: [{ name: "Sara Duque" }],
+  creator: "Sara Duque",
+  keywords: [
+    "landing page",
+    "real estate",
+    "UX/UI",
+    "frontend",
+    "lead generation",
+    "responsive design",
+    "portfolio",
+  ],
   alternates: {
     canonical: "/",
   },
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
     locale: "es_CO",
     url: "/",
     siteName: "NOVA Residences",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NOVA Residences — Landing Page Concept",
+    description:
+      "Caso conceptual de real estate enfocado en estrategia de conversión, experiencia responsive y desarrollo frontend.",
   },
   robots: {
     index: true,
