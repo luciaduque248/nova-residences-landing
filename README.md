@@ -4,8 +4,21 @@
 
 Portfolio landing-page case study by Sara Duque.
 
+**Live demo:** https://nova-residences-landing.vercel.app
+
 ## Goal
 Generate qualified leads and private-visit bookings from paid campaigns.
+
+## Highlights
+- Editorial real-estate art direction
+- Custom NOVA architectural hero artwork
+- Interactive typology explorer with conceptual floor plans
+- Amenities, gallery and conceptual location storytelling
+- Interactive financing scenario demo
+- Accessible lead-capture demo with local success state
+- Downloadable concept brochure
+- Responsive behavior and reduced-motion support
+- SEO metadata and production-ready validation
 
 ## Stack
 Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Motion for React.
@@ -36,5 +49,8 @@ npm run build
 ## Branch model
 `main` stable · `develop` integration · `feature/*` work branches.
 
+## Portfolio integrity
+NOVA Residences is a fictional portfolio concept. Pricing, availability, delivery dates, location details and financial scenarios are demonstrative and do not represent a real-estate offer.
+
 ## Status
-Initial technical scaffold and design/conversion brief prepared. Final visual design and production content are intentionally pending.
+**v1 portfolio-ready** — visual direction, conversion flow, responsive implementation and interactive demos completed.
