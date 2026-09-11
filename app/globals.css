@@ -57,8 +57,9 @@ a {
 }
 
 button:active,
-.button:active {
-  transform: scale(0.985);
+.button:active,
+a.button:active {
+  transform: scale(0.975);
 }
 
 ::selection {
@@ -78,10 +79,10 @@ button:active,
 
 .eyebrow {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   line-height: 1.2;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.19em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -102,16 +103,23 @@ button:active,
   padding: 0.78rem 1.2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: transform 150ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  transition:
+    transform 145ms cubic-bezier(.2,.8,.2,1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .button-dark {
   background: var(--ink);
   color: white;
+  box-shadow: 0 9px 24px rgba(23, 21, 18, 0.1);
 }
 
 .button-dark:hover {
   background: #2a2722;
+  box-shadow: 0 12px 30px rgba(23, 21, 18, 0.16);
 }
 
 .button-outline {
@@ -121,6 +129,7 @@ button:active,
 
 .button-outline:hover {
   border-color: rgba(21, 20, 18, 0.48);
+  background: rgba(21, 20, 18, 0.025);
 }
 
 .nav-link {
@@ -137,7 +146,7 @@ button:active,
   bottom: -0.35rem;
   height: 1px;
   background: var(--foreground);
-  transition: right 220ms ease;
+  transition: right 220ms cubic-bezier(.2,.8,.2,1);
 }
 
 .nav-link:hover {
@@ -157,7 +166,7 @@ button:active,
   padding: 0.85rem 1rem;
   color: white;
   outline: none;
-  transition: border-color 160ms ease, background-color 160ms ease;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 145ms ease;
 }
 
 .form-control::placeholder {
@@ -183,6 +192,34 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+.reveal-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: novaReveal 720ms cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.reveal-delay-1 { animation-delay: 90ms; }
+.reveal-delay-2 { animation-delay: 180ms; }
+.reveal-delay-3 { animation-delay: 270ms; }
+
+.hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: radial-gradient(rgba(255,255,255,.9) .5px, transparent .5px);
+  background-size: 5px 5px;
+  mix-blend-mode: soft-light;
+}
+
+@keyframes novaReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 768px) {
   .section-shell {
     width: min(100% - 4rem, 1380px);
@@ -201,5 +238,10 @@ summary::-webkit-details-marker {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal-up {
+    opacity: 1;
+    transform: none;
   }
 }
