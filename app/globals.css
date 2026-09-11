@@ -1,26 +1,205 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F4F0E8;
-  --foreground: #151412;
-  --muted: #6D675F;
-  --accent: #A27C52;
-  --surface: #FCFAF6;
+  --background: #f2eee6;
+  --foreground: #171512;
+  --muted: #6d675f;
+  --accent: #9f7850;
+  --surface: #fbf8f2;
+  --stone: #ded7cb;
+  --ink: #171512;
+  --paper: #f8f3ea;
+  --sand: #c9aa83;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
 body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
-button, a, input, select, textarea { font: inherit; }
-a { color: inherit; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a,
+summary,
+select,
+input[type="range"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+button:active,
+.button:active {
+  transform: scale(0.985);
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.section-shell {
+  width: min(100% - 2rem, 1380px);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.body-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.78rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: transform 150ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.button-dark {
+  background: var(--ink);
+  color: white;
+}
+
+.button-dark:hover {
+  background: #2a2722;
+}
+
+.button-outline {
+  border: 1px solid rgba(21, 20, 18, 0.16);
+  background: transparent;
+}
+
+.button-outline:hover {
+  border-color: rgba(21, 20, 18, 0.48);
+}
+
+.nav-link {
+  position: relative;
+  color: var(--muted);
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -0.35rem;
+  height: 1px;
+  background: var(--foreground);
+  transition: right 220ms ease;
+}
+
+.nav-link:hover {
+  color: var(--foreground);
+}
+
+.nav-link:hover::after {
+  right: 0;
+}
+
+.form-control {
+  min-height: 3.25rem;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.055);
+  padding: 0.85rem 1rem;
+  color: white;
+  outline: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.form-control:focus {
+  border-color: rgba(201, 170, 131, 0.82);
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.form-control option {
+  color: var(--ink);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    width: min(100% - 4rem, 1380px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
