@@ -3,29 +3,35 @@ import { LeadForm } from "@/components/lead-form";
 import { NovaHero } from "@/components/nova-hero";
 import { TypologyExplorer } from "@/components/typology-explorer";
 
+const NOVA_VISUAL_IMAGE =
+  "https://images.unsplash.com/photo-1758448511578-ec292173b70c?auto=format&fit=crop&fm=jpg&q=88&w=2400";
+
 const amenities = [
   ["01", "Rooftop lounge", "Una terraza alta para reuniones pequeñas, lectura y atardeceres sobre la ciudad."],
-  ["02", "Piscina elevada", "Agua, sombra y vegetación en un espacio pensado para bajar el ritmo."],
-  ["03", "Wellness studio", "Entrenamiento, movilidad y recuperación sin salir del edificio."],
+  ["02", "Piscina elevada", "Agua, sombra y vegetación en un espacio pensado para bajar el ritmo sin salir de la torre."],
+  ["03", "Wellness studio", "Entrenamiento, movilidad y recuperación dentro del mismo edificio."],
   ["04", "Work lounge", "Mesas compartidas, cabinas silenciosas y salas breves para trabajo híbrido."],
-  ["05", "Pet garden", "Un jardín exterior de uso cotidiano para quienes comparten la vida con mascotas."],
-  ["06", "Lobby concierge", "Una llegada sobria, segura y cuidadosamente iluminada."],
+  ["05", "Pet terrace", "Una terraza exterior integrada al edificio para quienes comparten la vida con mascotas."],
+  ["06", "Lobby concierge", "Una llegada sobria, segura y cuidadosamente iluminada en la base de la torre."],
 ];
 
 const gallery = [
   {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=88",
-    label: "Volúmenes y terrazas",
+    image: NOVA_VISUAL_IMAGE,
+    label: "Torre NOVA · fachada urbana",
+    position: "70% center",
     className: "lg:col-span-7 lg:row-span-2",
   },
   {
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=88",
-    label: "Materialidad cálida",
+    image: NOVA_VISUAL_IMAGE,
+    label: "Balcones · detalle residencial",
+    position: "93% 26%",
     className: "lg:col-span-5",
   },
   {
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=88",
-    label: "Interiores serenos",
+    image: NOVA_VISUAL_IMAGE,
+    label: "Horizonte · contexto urbano",
+    position: "18% 68%",
     className: "lg:col-span-5",
   },
 ];
@@ -93,14 +99,19 @@ export default function Home() {
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <p className="eyebrow">03 · Amenidades</p>
-            <h2 className="mt-6 text-5xl font-medium leading-[0.95] tracking-[-0.055em] md:text-7xl">Más espacio sin sumar metros.</h2>
-            <p className="mt-7 max-w-md body-copy">Las amenidades funcionan como extensiones reales de la vivienda: trabajar, entrenar, recibir o simplemente salir del apartamento sin salir de casa.</p>
+            <h2 className="mt-6 text-5xl font-medium leading-[0.95] tracking-[-0.055em] md:text-7xl">Más espacio sin salir de la torre.</h2>
+            <p className="mt-7 max-w-md body-copy">Cada amenidad se plantea como una extensión del mismo edificio NOVA: trabajar, entrenar, recibir, descansar o salir al exterior sin romper la continuidad del proyecto.</p>
 
             <div className="group relative mt-11 aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#b4a18d]">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=88')] bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-[1.025]" role="img" aria-label="Interior residencial contemporáneo de referencia visual" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-7 pt-28 text-white">
-                <p className="text-xs uppercase tracking-[.17em] text-white/60">Interior direction</p>
-                <p className="mt-2 text-xl font-medium">Piedra, madera, sombra y luz natural.</p>
+              <div
+                className="absolute inset-0 bg-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                style={{ backgroundImage: `url('${NOVA_VISUAL_IMAGE}')`, backgroundPosition: "88% 40%" }}
+                role="img"
+                aria-label="Detalle de balcones y terrazas de la torre conceptual NOVA Residences"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/58 via-black/12 to-transparent p-7 pt-28 text-white">
+                <p className="text-xs uppercase tracking-[.17em] text-white/60">Torre NOVA · rooftop level</p>
+                <p className="mt-2 text-xl font-medium">Balcones, vegetación y luz cálida dentro del mismo lenguaje arquitectónico.</p>
               </div>
             </div>
           </div>
@@ -124,16 +135,21 @@ export default function Home() {
           <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="eyebrow">04 · Galería</p>
-              <h2 className="mt-5 text-5xl font-medium tracking-[-0.05em] md:text-7xl">Materiales, luz, silencio.</h2>
+              <h2 className="mt-5 text-5xl font-medium tracking-[-0.05em] md:text-7xl">Una torre. Un solo lenguaje.</h2>
             </div>
-            <p className="max-w-sm text-sm leading-6 text-[var(--muted)]">Referencias visuales que definen la dirección artística del caso conceptual.</p>
+            <p className="max-w-sm text-sm leading-6 text-[var(--muted)]">La galería ya no mezcla referencias de casas distintas: todas las vistas parten del mismo concepto residencial NOVA y muestran fachada, balcones y contexto urbano.</p>
           </div>
 
           <div className="grid min-h-[880px] gap-4 lg:grid-cols-12 lg:grid-rows-2">
             {gallery.map((item) => (
               <figure key={item.label} className={`${item.className} group relative min-h-[310px] overflow-hidden rounded-[1.65rem]`}>
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-[1.025]" style={{ backgroundImage: `url('${item.image}')` }} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div
+                  className="absolute inset-0 bg-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                  style={{ backgroundImage: `url('${item.image}')`, backgroundPosition: item.position }}
+                  role="img"
+                  aria-label={item.label}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/54 via-transparent to-transparent" />
                 <figcaption className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-6 text-white md:p-7">
                   <span className="text-sm">{item.label}</span>
                   <span className="h-8 w-8 rounded-full border border-white/35 text-center text-lg leading-7 transition-transform duration-300 group-hover:rotate-45">↗</span>
