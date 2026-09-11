@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">NOVA Residences portfolio cover</title>
+  <desc id="desc">Editorial real-estate case study cover for NOVA Residences.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f1e9"/>
+      <stop offset="1" stop-color="#e2d8ca"/>
+    </linearGradient>
+    <linearGradient id="arch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9b59b"/>
+      <stop offset="1" stop-color="#796a5b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="760" height="900" fill="#f8f4ed"/>
+
+  <text x="84" y="94" fill="#8f6d4c" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="9">PORTFOLIO CASE STUDY</text>
+  <text x="84" y="276" fill="#171512" font-family="Georgia, 'Times New Roman', serif" font-size="150" letter-spacing="-10">NOVA</text>
+  <text x="84" y="386" fill="#171512" font-family="Georgia, 'Times New Roman', serif" font-size="94" letter-spacing="-5">Residences</text>
+  <text x="88" y="450" fill="#6d675f" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="4">REAL ESTATE · LEAD GENERATION</text>
+
+  <line x1="88" y1="510" x2="208" y2="510" stroke="#9f7850" stroke-width="3"/>
+  <text x="88" y="585" fill="#332f2a" font-family="Georgia, 'Times New Roman', serif" font-size="38">Arquitectura serena.</text>
+  <text x="88" y="633" fill="#332f2a" font-family="Georgia, 'Times New Roman', serif" font-size="38">Conversión sin ruido.</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#443f39">
+    <rect x="88" y="718" width="102" height="48" rx="24" fill="none" stroke="#b9ad9f"/>
+    <text x="115" y="749">UX/UI</text>
+    <rect x="204" y="718" width="126" height="48" rx="24" fill="none" stroke="#b9ad9f"/>
+    <text x="229" y="749">Frontend</text>
+    <rect x="344" y="718" width="145" height="48" rx="24" fill="none" stroke="#b9ad9f"/>
+    <text x="367" y="749">Responsive</text>
+    <rect x="503" y="718" width="139" height="48" rx="24" fill="none" stroke="#b9ad9f"/>
+    <text x="529" y="749">Conversion</text>
+  </g>
+
+  <g transform="translate(810 82)">
+    <rect width="710" height="710" rx="44" fill="#1d1a17"/>
+    <rect x="26" y="26" width="658" height="658" rx="30" fill="url(#arch)"/>
+
+    <g opacity=".92">
+      <rect x="98" y="278" width="150" height="320" rx="18" fill="#e2d5c5"/>
+      <rect x="264" y="190" width="190" height="408" rx="20" fill="#c4b19a"/>
+      <rect x="470" y="242" width="134" height="356" rx="18" fill="#efe5d9"/>
+      <g stroke="#6d5d4d" stroke-width="3" opacity=".65">
+        <line x1="116" y1="340" x2="232" y2="340"/>
+        <line x1="116" y1="414" x2="232" y2="414"/>
+        <line x1="116" y1="488" x2="232" y2="488"/>
+        <line x1="288" y1="270" x2="430" y2="270"/>
+        <line x1="288" y1="350" x2="430" y2="350"/>
+        <line x1="288" y1="430" x2="430" y2="430"/>
+        <line x1="488" y1="324" x2="586" y2="324"/>
+        <line x1="488" y1="405" x2="586" y2="405"/>
+      </g>
+    </g>
+
+    <text x="62" y="88" fill="#f7f1e7" font-family="Arial, Helvetica, sans-serif" font-size="17" letter-spacing="7">VIVIR MÁS ARRIBA</text>
+    <text x="62" y="130" fill="#f7f1e7" font-family="Georgia, 'Times New Roman', serif" font-size="42">Residential concept</text>
+    <text x="62" y="650" fill="#f7f1e7" opacity=".7" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="5">CALI · COLOMBIA · 2026</text>
+  </g>
+
+  <text x="86" y="842" fill="#8a8177" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="4">SARA DUQUE · UX/UI · FRONTEND DEVELOPMENT</text>
+</svg>

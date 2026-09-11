@@ -220,6 +220,18 @@ summary::-webkit-details-marker {
   }
 }
 
+@media (max-width: 380px) {
+  #inicio h1 {
+    font-size: clamp(3.75rem, 17vw, 4.35rem);
+  }
+}
+
+@media (max-width: 1023px) {
+  footer .section-shell {
+    padding-bottom: 6.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .section-shell {
     width: min(100% - 4rem, 1380px);

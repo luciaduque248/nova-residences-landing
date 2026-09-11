@@ -1,18 +1,38 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 export function LeadForm() {
   const [submitted, setSubmitted] = useState(false);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (submitted) {
+      successRef.current?.focus();
+    }
+  }, [submitted]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const form = event.currentTarget;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     setSubmitted(true);
   }
 
   if (submitted) {
     return (
-      <div className="rounded-[2rem] border border-white/15 bg-white/[0.04] p-7 md:p-10" aria-live="polite">
+      <div
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        aria-live="polite"
+        className="rounded-[2rem] border border-white/15 bg-white/[0.04] p-7 outline-none md:p-10"
+      >
         <p className="text-xs uppercase tracking-[0.17em] text-[var(--sand)]">Demo completada</p>
         <h3 className="mt-4 text-4xl font-medium tracking-[-0.04em]">Gracias por recorrer NOVA.</h3>
         <p className="mt-5 max-w-xl leading-7 text-white/60">
@@ -20,7 +40,7 @@ export function LeadForm() {
         </p>
         <button
           type="button"
-          className="mt-8 rounded-full border border-white/25 px-5 py-3 text-sm transition hover:border-white"
+          className="mt-8 rounded-full border border-white/25 px-5 py-3 text-sm transition hover:border-white focus-visible:border-white"
           onClick={() => setSubmitted(false)}
         >
           Probar de nuevo
@@ -30,7 +50,7 @@ export function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[2rem] border border-white/15 bg-white/[0.04] p-5 md:p-8" noValidate>
+    <form onSubmit={handleSubmit} className="rounded-[2rem] border border-white/15 bg-white/[0.04] p-5 md:p-8">
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="Nombre" name="name" type="text" autoComplete="name" placeholder="Tu nombre" required />
         <Field label="Correo" name="email" type="email" autoComplete="email" placeholder="nombre@correo.com" required />
@@ -58,7 +78,12 @@ export function LeadForm() {
       </label>
 
       <label className="mt-5 flex items-start gap-3 text-sm leading-6 text-white/55">
-        <input type="checkbox" required className="mt-1 h-4 w-4 accent-[var(--sand)]" />
+        <input
+          type="checkbox"
+          name="portfolio-disclaimer"
+          required
+          className="mt-1 h-4 w-4 accent-[var(--sand)]"
+        />
         <span>Entiendo que NOVA Residences es un caso ficticio de portafolio y que este formulario no enviará mis datos.</span>
       </label>
 
